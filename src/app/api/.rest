@@ -1,0 +1,28 @@
+###
+GET http://localhost:3000/api/events/getAllPosts 
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/events/addPost 
+Content-Type: application/json
+
+{   "descricao": "Sample 22Event 5", 
+    "data": "20/09/2025", 
+    "hora": "18:30" 
+}
+
+###
+DELETE http://localhost:3000/api/events/deletePost/1 
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/events/getPostFromDate/25-10-2025 
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/events/editColor/25-10-2025
+Content-Type: application/json
+
+{ 
+    "color": "#00FF00" 
+}
