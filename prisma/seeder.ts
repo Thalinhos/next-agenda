@@ -31,10 +31,12 @@ export async function seeder() {
 
     // 3. Criar usuário admin
     //@ts-ignore
+    const hashedPAss = bcrypt.hashSync(adminSenha, 10)
+
     const adminUser = await prisma.user.create({
       data: {
         nome: 'admin',
-        senha: await bcrypt.hash(adminSenha, 10),
+        senha: hashedPAss,
       },
     });
 
@@ -51,7 +53,7 @@ export async function seeder() {
       eventTest,
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
     throw new Error(error.message);
   } finally {

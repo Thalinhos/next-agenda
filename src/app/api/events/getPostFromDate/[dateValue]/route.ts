@@ -1,11 +1,11 @@
-import { NextApiRequest } from "next";
+
 import { PrismaClient } from "../../../../../../generated/prisma/client.js";
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const prisma = new PrismaClient();
 
-export async function GET(request: NextApiRequest, { params }: any)  {
+export async function GET(request: NextRequest, { params }: any)  {
   const paramsValue = await params;
   const dateValue = await paramsValue.dateValue;
   if (!dateValue) {
