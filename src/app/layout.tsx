@@ -1,10 +1,12 @@
+'use client';
 import type { Metadata } from "next";
 import "./globals.css";
+import { SessionProvider, signOut } from "next-auth/react";
 
-export const metadata: Metadata = {
-  title: "Agenda App",
-  description: "Agenda para gerenciar tarefas diárias",
-};
+// export const metadata: Metadata = {
+//   title: "Agenda App",
+//   description: "Agenda para gerenciar tarefas diárias",
+// };
 
 export default function RootLayout({
   children,
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <SessionProvider>
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
