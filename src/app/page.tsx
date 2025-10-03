@@ -28,17 +28,17 @@ export default function Home() {
     }
 
   return (
-          <>
+          <div>
             <div className="flex flex-col min-h-screen">
                
-                <div className='bg-blue-400 p-1 flex justify-between'>
-                    <div className='ml-14 cursor-pointer' onClick={() => auau()}>
+                <div className='bg-gray-50 rounded p-1 flex justify-between'>
+                    <div className='ml-64 cursor-pointer' onClick={() => auau()}>
                         <Image src={'/dokikoda.jpg'} alt={''} width={720} height={720} className='w-14 h-14 rounded-full'/>
                     </div>
-                    <div className='items-center justify-center flex mr-14'>
+                    <div className='items-center justify-center flex mr-64'>
                         <button
                         onClick={() => signOut()}
-                        className="cursor-pointer ml-auto bg-red-500 text-white px-4 py-2 rounded items-center justify-center"
+                        className="cursor-pointer ml-auto bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded items-center justify-center"
                         >
                         Sair
                         </button>
@@ -58,6 +58,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
   );
 }
